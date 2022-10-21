@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2d69cc14bf.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- fuente importada de Google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic&family=PT+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="pagina.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"crossorigin="anonymous">
+    <script src="index.js"></script>
+    <title>Contacto</title>
+</head>
+<body onload="cambios()">
+    <header id="encabezado"></header>
+    <section class="secqs">
+        
+        <div class="container"> 
+            <form action="">
+               
+                    <div class="form-group titulo"><legend><b>Si quieres contactarnos por favor llena el siguiente formulario</b></legend></div><!-- con legend le doy un título a mi fieldset -->
+                        <div class="form row">
+                            <div class="form-group col-sm-6">
+                                    <label for="nombre">Nombre/s:</label> <!-- el for indica a que input se le va a atribuir el label -->
+                                    <input type="text" name="nombre" id=nombre class="form-control" required><!-- el id es para identificar el input en js el name es el nombre que se le va a adjuntar al dato cuando lo envío, con required hago que el campo sea de llenado obligatorio -->  <!-- size="30" maxlength="10" -->
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label for="apellido">Apellido/s:</label>
+                                <input type="text" name="apellido" id="apellido" class="form-control" required>
+                            </div>
+                        </div>
+                                
+                        <div class="form row">
+                            <div class="form-group col-sm-6">
+                                <label for="email">E-mail:</label>
+                                <div class="plinea">
+                                    <input oninput="validarCorreo()" type="email" name="mail" id="ingresoEmail" class="form-control" required> <p class="plinea" id="validacionMail"></p>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="form row">
+                            <div class="form-group col-sm-6">
+                                <label for="telefono">Teléfono:</label>
+                                <input type="text" name="telefono" id="ingresoTelefono" class="form-control" required>
+                            </div>
+                        </div>           
+                        <div class="form row">
+                            <div class="form-group col-sm-4">
+                                <label for="pais">País:</label>
+                                <input type="text" name="pais" id="ingresoPais" class="form-control" value="Argentina" required>
+                            </div> <!-- el value es para que me aparezca predeterminado un valor en el campo de entrada -->
+                            <div class="form-group col-sm-4">
+                                <label for="ciudad">Cuidad:</label>
+                                <input type="text" name="ciudad" id="ingresoCiudad" class="form-control" required>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="localidad">Localidad:</label>
+                                <input type="text" name="localidad" id="ingresoLocalidad" class="form-control" required>
+                            </div>
+                        </div> 
+                                
+                        <div class="form row">
+                            <div class="form-group col-sm-6">
+                                <label for="consulta">Ingrese su consulta:</label>
+                                <textarea name="texto" id="comentarios" class="form-control" placeholder="Ingrese sobre cual producto/servicio necesita infomación."></textarea><!-- place holder es un textoq ue desaparece cuando el usuario ingresa el propio -->
+                            </div>
+                        </div>
+                        <div class="form row">
+                            <div class="form-group col-sm-5">
+                                <label for="horario">Seleccione horario de contactacto</label>
+                                <select name="selector" id="horario"  class="custom-select"><!-- multiple size="2" con size le digo cuanto valores muestre y con ,ultiple permito que pueda elegir varias opciones -->
+                                    <option value="1">08:30 a 10:00</option> <!-- cuando se seleccione una opcion en la base de datos quedara almacenado el contenido del value no el horario elegido en si  -->
+                                    <option value="2">10:00 a 12:00</option>
+                                    <option value="3">12:00 a 14:00</option>
+                                    <option value="4">14:00 a 16:00</option>
+                                    <option value="5">16:00 a 17:30</option>
+                                </select>
+                            </div>
+                        </div>   
+                        
+                        
+                        <!-- <br><br>
+                        <label for="op">Seleccione comisión</label>
+                        <br>
+                        <p align="center"> <input type="radio" name="op" value="1">Comisión 1</p> 
+                        <br>
+                        <p align="center"> <input type="radio" name="op" value="1">Comisión 2</p>
+                        <br>
+                        <input type="radio" name="op" value="3">Comisión 3
+                        <br>
+                        <input type="radio" name="op" value="4">Comisión 4 -->
+                        <!-- en name tengo poner todos iguales para que sepa que son del mismo grupo y solo me deje seleccionar una sola opción -->
+                        <!-- <br><br>
+                        <label for="dni">Ingrese DNI</label>
+                        <input type="number" name="dni">
+                        <br><br><br>
+                        <label for="hijos">Ingrese cantidad de hijos</label>
+                        <input type="number" name="hijos" min="1" max="5">
+                        <br><br>
+                        <label for="color">Ingrese color:</label>
+                        <input type="color" name="color" id="14">
+                        <br><br> -->
+                        <div class="form-group">
+                            <div class="form-check form-check-inline">
+                                <input type="checkbox" class="form-check-input" name="checkconsentimiento" id="condiciones">
+                                <label for="checkbox" class="form-check-label">Acepta términos y condiciones</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="form-group col-sm-6">    
+                                    <button class="btn btn-primary" type="submit" >Enviar Datos</button>
+                                    <button class="btn btn-primary" type="reset" >Borrar Valores</button>
+                                </div>
+                            </div>
+                        </div> 
+            </form>
+        </div>
+        <div class="contenedoriframe">
+            <div> 
+                <iframe class="contenedorMapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.6043464262625!2d-58.44159608534632!3d-34.56357178046996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5b7ef8d5147%3A0x948561727ae0e7f6!2sMigueletes%201234%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1635175662207!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="direccion">
+                
+                <h3>Donde econtrarnos</h3><p>Migueletes 1234, CABA, Buenos Aires. Argentina</p><p>CP: 1426</p><p>+54 115774235</p><p>contacto@biotech.com</p>
+            </div>
+        </div>
+    </section>
+    <footer id="pie"></footer>
+</body>
+</html>

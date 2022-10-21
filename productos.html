@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2d69cc14bf.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- fuente importada de Google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic&family=PT+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="pagina.css">
+    <script src="index.js"></script>
+    <title>Productos</title>
+
+</head>
+<body onload= "cambios()">
+    <header id="encabezado"></header>
+    <section class="sectionProductos">   <!-- tengo que cambiar la clase de section a flex para que no se ponga todo en una sola area -->
+        <div id="carousel" class="contenedorcarousel" >
+            <div> <button id="atras" onclick="atras()" class="buttoncarousel"><i class="fas fa-angle-left"></i></button></div>
+            <!-- <div class="centradocarousel"> -->
+                <div id="contenido" class="centradocarousel">
+                    <div class="contenedorimg"><img src="68002.jpg" alt="adn" class="img"></div>
+                    <div class="contenidoinfo"><h3 class="h3sec2">Cobas 6800</h3><p class="pSize">Rendimiento comprobado, automatización absoluta, flexibilidad inigualable y conectividad completa. Liderando el camino en pruebas moleculares, con todo lo que necesita.</p></div>
+                </div>
+            <!-- </div> -->
+            <div><button id="adelante" onclick="adelante()" class="buttoncarousel" ><i class="fas fa-angle-right"></i></button></div>
+        </div>
+    </section>
+    <footer id="pie"></footer>
+</body>
+</html>
